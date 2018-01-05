@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Export-Package: com.packtpub.felix.bookshelf.inventory.impl.mock;uses:
+ ="com.packtpub.felix.bookshelf.inventory.api"
+Built-By: glonghitano
+Bundle-Category: sample
+Tool: Bnd-0.0.357
+Bundle-Name: Bookshelf Inventory Impl - Mock
+Created-By: Apache Maven Bundle Plugin
+Build-Jdk: 1.7.0_65
+Bundle-Version: 1.5.0
+Bnd-LastModified: 1515167584943
+Bundle-ManifestVersion: 2
+Bundle-Activator: com.packtpub.felix.bookshelf.inventory.impl.mock.act
+ ivator.BookInventoryMockImplActivator
+Bundle-Description: Memory-based mock implementation of the Bookshelf 
+ Inventory API
+Import-Package: com.packtpub.felix.bookshelf.inventory.api,com.packtpu
+ b.felix.bookshelf.inventory.impl.mock,org.osgi.framework;version="1.5
+ "
+Bundle-SymbolicName: com.packtpub.felix.bookshelf.inventory.impl.mock
+
