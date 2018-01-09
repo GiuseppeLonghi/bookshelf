@@ -1,6 +1,6 @@
-/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/sources/com.packtpub.felix.bookshelf.inventory.api/src/main/java/com/packtpub/felix/bookshelf/inventory/api/InvalidBookException.java
-/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/sources/com.packtpub.felix.bookshelf.inventory.api/src/main/java/com/packtpub/felix/bookshelf/inventory/api/BookNotFoundException.java
-/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/sources/com.packtpub.felix.bookshelf.inventory.api/src/main/java/com/packtpub/felix/bookshelf/inventory/api/BookAlreadyExistsException.java
-/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/sources/com.packtpub.felix.bookshelf.inventory.api/src/main/java/com/packtpub/felix/bookshelf/inventory/api/Book.java
 /local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/sources/com.packtpub.felix.bookshelf.inventory.api/src/main/java/com/packtpub/felix/bookshelf/inventory/api/MutableBook.java
+/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/sources/com.packtpub.felix.bookshelf.inventory.api/src/main/java/com/packtpub/felix/bookshelf/inventory/api/BookAlreadyExistsException.java
 /local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/sources/com.packtpub.felix.bookshelf.inventory.api/src/main/java/com/packtpub/felix/bookshelf/inventory/api/BookInventory.java
+/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/sources/com.packtpub.felix.bookshelf.inventory.api/src/main/java/com/packtpub/felix/bookshelf/inventory/api/BookNotFoundException.java
+/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/sources/com.packtpub.felix.bookshelf.inventory.api/src/main/java/com/packtpub/felix/bookshelf/inventory/api/Book.java
+/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/sources/com.packtpub.felix.bookshelf.inventory.api/src/main/java/com/packtpub/felix/bookshelf/inventory/api/InvalidBookException.java

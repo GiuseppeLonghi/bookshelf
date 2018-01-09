@@ -12,9 +12,33 @@ package com.packtpub.felix.bookshelf.inventory.api;
  */
 public interface Book 
 {
+	/**
+	 * 
+	 * @return The International Standard Book Number
+	 */
 	String getISBN();
+	
+	/**
+	 * 
+	 * @return Book's title
+	 */
 	String getTitle();
+	
+	/**
+	 * 
+	 * @return Book's Author
+	 */
 	String getAuthor();
+	
+	/**
+	 * 
+	 * @return Book's category
+	 */
 	String getCategory();
+	
+	/**
+	 * 
+	 * @return Book's rating
+	 */
 	int getRating();	
 }

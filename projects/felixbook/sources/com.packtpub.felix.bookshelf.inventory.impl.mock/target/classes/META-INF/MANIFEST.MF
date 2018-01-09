@@ -8,7 +8,7 @@ Bundle-Name: Bookshelf Inventory Impl - Mock
 Created-By: Apache Maven Bundle Plugin
 Build-Jdk: 1.7.0_65
 Bundle-Version: 1.5.0
-Bnd-LastModified: 1515167584943
+Bnd-LastModified: 1515427633102
 Bundle-ManifestVersion: 2
 Bundle-Activator: com.packtpub.felix.bookshelf.inventory.impl.mock.act
  ivator.BookInventoryMockImplActivator

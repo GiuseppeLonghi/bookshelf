@@ -64,12 +64,15 @@ public class BookInventoryMockImpl implements BookInventory
 	public String storeBook(MutableBook book) throws InvalidBookException 
 	{
 		String isbn = book.getISBN();
+
 		if (isbn == null)
 		{
 			throw new InvalidBookException("ISBN is not set");
 		}
+		
 		this.booksByISBN.put(isbn, book);
 		String category = book.getCategory();
+		
 		if(category == null)
 		{
 			category = DEFAULT_CATEGORY;

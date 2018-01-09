@@ -1,0 +1,7 @@
+/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/sources/com.packtpub.felix.bookshelf.service/src/main/java/com/packtpub/felix/bookshelf/service/impl/BookshelfServiceImpl.java
+/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/sources/com.packtpub.felix.bookshelf.service/src/main/java/com/packtpub/felix/bookshelf/service/api/BookshelfService.java
+/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/sources/com.packtpub.felix.bookshelf.service/src/main/java/com/packtpub/felix/bookshelf/service/api/Authentication.java
+/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/sources/com.packtpub.felix.bookshelf.service/src/main/java/com/packtpub/felix/bookshelf/service/impl/SessionNotValidRuntimeException.java
+/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/sources/com.packtpub.felix.bookshelf.service/src/main/java/com/packtpub/felix/bookshelf/service/api/InvalidCredentialsException.java
+/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/sources/com.packtpub.felix.bookshelf.service/src/main/java/com/packtpub/felix/bookshelf/service/impl/activator/BookshelfServiceImplActivator.java
+/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/sources/com.packtpub.felix.bookshelf.service/src/main/java/com/packtpub/felix/bookshelf/service/impl/BookInventoryNotRegisteredRuntimeException.java

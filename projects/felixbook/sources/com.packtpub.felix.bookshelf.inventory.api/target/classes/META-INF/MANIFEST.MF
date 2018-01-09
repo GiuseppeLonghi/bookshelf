@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Export-Package: com.packtpub.felix.bookshelf.inventory.api
+Built-By: glonghitano
+Tool: Bnd-0.0.357
+Bundle-Category: sample
+Bundle-Name: Bookshelf Inventory API
+Created-By: Apache Maven Bundle Plugin
+Build-Jdk: 1.7.0_65
+Bundle-Version: 1.5.0
+Bnd-LastModified: 1515427620574
+Bundle-ManifestVersion: 2
+Bundle-Description: Defines the API for the Bookshelf inventory
+Import-Package: com.packtpub.felix.bookshelf.inventory.api
+Bundle-SymbolicName: com.packtpub.felix.bookshelf.inventory.api
+

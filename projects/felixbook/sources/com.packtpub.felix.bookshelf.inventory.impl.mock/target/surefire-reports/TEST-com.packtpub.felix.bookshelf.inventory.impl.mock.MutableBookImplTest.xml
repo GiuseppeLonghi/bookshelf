@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.packtpub.felix.bookshelf.inventory.impl.mock.MutableBookImplTest" time="0.015" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.packtpub.felix.bookshelf.inventory.impl.mock.MutableBookImplTest" time="0.035" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib64/jvm/java-1.7.0-openjdk-1.7.0/jre/lib/amd64"/>
@@ -23,7 +23,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Linux"/>
-    <property name="classworlds.conf" value="/local/my_space/OSGi/eclipse-jee-helios/workspace/.metadata/.plugins/org.maven.ide.eclipse/launches/m2conf6824389773931032660.tmp"/>
+    <property name="classworlds.conf" value="/local/my_space/OSGi/eclipse-jee-helios/workspace/.metadata/.plugins/org.maven.ide.eclipse/launches/m2conf4001367206172009841.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -57,5 +57,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="testMutableBookImpl" classname="com.packtpub.felix.bookshelf.inventory.impl.mock.MutableBookImplTest" time="0.003"/>
+  <testcase name="testMutableBookImpl" classname="com.packtpub.felix.bookshelf.inventory.impl.mock.MutableBookImplTest" time="0.004"/>
 </testsuite>

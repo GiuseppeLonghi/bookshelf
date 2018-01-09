@@ -22,7 +22,7 @@ public interface BookInventory
 	 * @author glonghitano
 	 *
 	 */
-	enum SearchCriteria
+	public enum SearchCriteria
 	{
 		ISBN_LIKE,
 		TITLE_LIKE,
