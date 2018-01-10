@@ -1,4 +1,4 @@
-<repository lastmodified='20180108042633.474'>
+<repository lastmodified='20180110101908.528'>
   <resource id='com.packtpub.felix.bookshelf.inventory.api/1.5.0' symbolicname='com.packtpub.felix.bookshelf.inventory.api' presentationname='Bookshelf Inventory API' uri='file:/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/releases/com/packtpub/felix/com.packtpub.felix.bookshelf.inventory.api/1.5.0/com.packtpub.felix.bookshelf.inventory.api-1.5.0.jar' version='1.5.0'>
     <description>Defines the API for the Bookshelf inventory</description>
     <size>7753</size>
@@ -56,6 +56,26 @@
     <require name='package' filter='(&amp;(package=com.packtpub.felix.bookshelf.inventory.api))' extend='false' multiple='false' optional='false'>Import package com.packtpub.felix.bookshelf.inventory.api</require>
     <require name='package' filter='(&amp;(package=com.packtpub.felix.bookshelf.service.api))' extend='false' multiple='false' optional='false'>Import package com.packtpub.felix.bookshelf.service.api</require>
     <require name='package' filter='(&amp;(package=com.packtpub.felix.bookshelf.service.impl))' extend='false' multiple='false' optional='false'>Import package com.packtpub.felix.bookshelf.service.impl</require>
+    <require name='package' filter='(&amp;(package=org.osgi.framework)(version&gt;=1.5.0))' extend='false' multiple='false' optional='false'>Import package org.osgi.framework;version=1.5</require>
+  </resource>
+  <resource id='com.packtpub.felix.bookshelf.service.tui/1.8.0' symbolicname='com.packtpub.felix.bookshelf.service.tui' presentationname='Bookshelf Service Gogo commands' uri='file:/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/releases/com/packtpub/felix/com.packtpub.felix.bookshelf.service.tui/1.8.0/com.packtpub.felix.bookshelf.service.tui-1.8.0.jar' version='1.8.0'>
+    <size>7255</size>
+    <category id='sample'/>
+    <capability name='bundle'>
+      <p n='symbolicname' v='com.packtpub.felix.bookshelf.service.tui'/>
+      <p n='presentationname' v='Bookshelf Service Gogo commands'/>
+      <p n='version' t='version' v='1.8.0'/>
+      <p n='manifestversion' v='2'/>
+    </capability>
+    <capability name='package'>
+      <p n='package' v='com.packtpub.felix.bookshelf.service.tui'/>
+      <p n='version' t='version' v='0.0.0'/>
+      <p n='uses:' v='com.packtpub.felix.bookshelf.inventory.api,org.apache.felix.service.command,com.packtpub.felix.bookshelf.service.api,org.osgi.framework'/>
+    </capability>
+    <require name='package' filter='(&amp;(package=com.packtpub.felix.bookshelf.inventory.api))' extend='false' multiple='false' optional='false'>Import package com.packtpub.felix.bookshelf.inventory.api</require>
+    <require name='package' filter='(&amp;(package=com.packtpub.felix.bookshelf.service.api))' extend='false' multiple='false' optional='false'>Import package com.packtpub.felix.bookshelf.service.api</require>
+    <require name='package' filter='(&amp;(package=com.packtpub.felix.bookshelf.service.tui))' extend='false' multiple='false' optional='false'>Import package com.packtpub.felix.bookshelf.service.tui</require>
+    <require name='package' filter='(&amp;(package=org.apache.felix.service.command)(version&gt;=0.6.0))' extend='false' multiple='false' optional='false'>Import package org.apache.felix.service.command;version=0.6</require>
     <require name='package' filter='(&amp;(package=org.osgi.framework)(version&gt;=1.5.0))' extend='false' multiple='false' optional='false'>Import package org.osgi.framework;version=1.5</require>
   </resource>
 </repository>
