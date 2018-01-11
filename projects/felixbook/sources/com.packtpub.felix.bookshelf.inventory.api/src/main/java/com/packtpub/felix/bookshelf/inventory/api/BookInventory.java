@@ -27,7 +27,6 @@ public interface BookInventory
 		ISBN_LIKE,
 		TITLE_LIKE,
 		AUTHOR_LIKE,
-		GROUP_LIKE,
 		CATEGORY_LIKE,
 		RATING_GT,
 		RATING_LT

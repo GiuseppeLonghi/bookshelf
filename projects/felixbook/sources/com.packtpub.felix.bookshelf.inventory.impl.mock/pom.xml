@@ -4,7 +4,7 @@
 
 	<groupId>com.packtpub.felix</groupId>
 	<artifactId>com.packtpub.felix.bookshelf.inventory.impl.mock</artifactId>
-	<version>1.5.0</version>
+	<version>1.9.0</version>
 	<packaging>bundle</packaging>
 
 	<name>Bookshelf Inventory Impl - Mock</name>
@@ -25,9 +25,9 @@
 					<instructions>
 						<Bundle-Category>sample</Bundle-Category>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Bundle-Activator>com.packtpub.felix.bookshelf.inventory.impl.mock.activator.BookInventoryMockImplActivator</Bundle-Activator>
+						<!-- <Bundle-Activator>com.packtpub.felix.bookshelf.inventory.impl.mock.activator.BookInventoryMockImplActivator</Bundle-Activator>
+						<Private-Package>com.packtpub.felix.bookshelf.inventory.impl.mock.activator</Private-Package> -->
 						<Export-Package>com.packtpub.felix.bookshelf.inventory.impl.mock</Export-Package>
-						<Private-Package>com.packtpub.felix.bookshelf.inventory.impl.mock.activator</Private-Package>
 					</instructions>
 					<remoteOBR>repo-rel</remoteOBR>
 					<prefixUrl>file:/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/releases</prefixUrl>
@@ -35,11 +35,27 @@
 			</plugin>
 
 			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-ipojo-plugin</artifactId>
+				<version>1.4.2</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>ipojo-bundle</goal>
+						</goals>
+						<configuration>
+							<metadata>src/main/ipojo/metadata.xml</metadata>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<inherited>true</inherited>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 		</plugins>

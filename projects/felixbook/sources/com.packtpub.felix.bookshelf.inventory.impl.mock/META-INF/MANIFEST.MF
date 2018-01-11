@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Created-By: iPOJO 1.12.1
+Import-Package: org.apache.felix.ipojo;version="[1.12.1,2.0.0)", org.a
+ pache.felix.ipojo.architecture;version="[1.12.1,2.0.0)", org.osgi.ser
+ vice.cm;version=1.2, org.osgi.service.log;version=1.3
+iPOJO-Components: instance { $component="BookInventoryMockImpl" $name=
+ "bookshelf.inventory.impl.mock" }component { $classname="com.packtpub
+ .felix.bookshelf.inventory.impl.mock.BookInventoryMockImpl" $name="Bo
+ okInventoryMockImpl" provides { }manipulation { $classname="com.packt
+ pub.felix.bookshelf.inventory.impl.mock.BookInventoryMockImpl" interf
+ ace { $name="com.packtpub.felix.bookshelf.inventory.api.BookInventory
+ " }field { $name="booksByISBN" $type="java.util.Map" }field { $name="
+ categories" $type="java.util.Map" }method { $name="getCategories" $re
+ turn="java.util.Set" }method { $name="createBook" $return="com.packtp
+ ub.felix.bookshelf.inventory.api.MutableBook" $arguments="{java.lang.
+ String}" $names="{isbn}" }method { $name="loadBookForEdit" $return="c
+ om.packtpub.felix.bookshelf.inventory.api.MutableBook" $arguments="{j
+ ava.lang.String}" $names="{isbn}" }method { $name="storeBook" $return
+ ="java.lang.String" $arguments="{com.packtpub.felix.bookshelf.invento
+ ry.api.MutableBook}" $names="{book}" }method { $name="loadBook" $retu
+ rn="com.packtpub.felix.bookshelf.inventory.api.Book" $arguments="{jav
+ a.lang.String}" $names="{isbn}" }method { $name="removeBook" $argumen
+ ts="{java.lang.String}" $names="{isbn}" }method { $name="searchBooks"
+  $return="java.util.Set" $arguments="{java.util.Map}" $names="{criter
+ ia}" }method { $name="checkIntegerGreater" $return="boolean" $argumen
+ ts="{int,java.lang.String}" $names="{attr,ctriVal}" }method { $name="
+ checkIntegerSmaller" $return="boolean" $arguments="{int,java.lang.Str
+ ing}" $names="{attr,ctriVal}" }method { $name="checkStringMatch" $ret
+ urn="boolean" $arguments="{java.lang.String,java.lang.String}" $names
+ ="{attr,critVal}" }}}
+
