@@ -9,13 +9,15 @@ import com.packtpub.felix.bookshelf.inventory.api.MutableBook;
  * @author glonghitano
  *
  */
-public class MutableBookImpl implements MutableBook 
+public class MutableBookImpl implements MutableBook
 {
 	private String isbn;
 	private String author;
 	private String title;
 	private String category;
 	private int rating;
+	private boolean started;
+	private boolean finished;
 
 	/**
 	 * @param isbn
@@ -25,7 +27,18 @@ public class MutableBookImpl implements MutableBook
 		setISBN(isbn);
 	}
 
-	
+	/**{@inheritDoc}*/
+	public void setStarted(boolean value) 
+	{
+		this.started = value;
+	}
+
+	/**{@inheritDoc}*/
+	public void setFinished(boolean value) 
+	{
+		this.finished = value;
+	}
+
 	/**{@inheritDoc}*/
 	public String getTitle() 
 	{
@@ -86,13 +99,31 @@ public class MutableBookImpl implements MutableBook
 	{
 		return this.isbn;
 	}
-	
+
+	/**{@inheritDoc}*/
+	public boolean getStarted() 
+	{
+		return this.started;
+	}
+
+	/**{@inheritDoc}*/
+	public boolean getFinished() 
+	{
+		return this.finished;
+	}
+
 	public String toString()
 	{
 		StringBuffer buf = new StringBuffer();
-		buf.append(getCategory()).append(": ");
-		buf.append(getTitle()).append(" from ").append(getAuthor());
-		buf.append(" [").append(getRating()).append("]");
+		
+		buf.append("ISBN: ").append(getISBN());
+		buf.append("; Author: ").append(getAuthor());
+		buf.append("; Title: ").append(getTitle());
+		buf.append("; Category: ").append(getCategory());
+		buf.append("; Rating [").append(getRating()).append("]");
+		buf.append("; Started: ").append(getStarted());
+		buf.append("; Finished: ").append(getFinished());
+		
 		return buf.toString();
 	}
 }

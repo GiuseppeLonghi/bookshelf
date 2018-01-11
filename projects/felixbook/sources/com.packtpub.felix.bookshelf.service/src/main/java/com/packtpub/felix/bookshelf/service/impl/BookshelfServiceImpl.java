@@ -126,6 +126,31 @@ public class BookshelfServiceImpl implements BookshelfService
 		inventory.storeBook(book);
 	}
 
+	/**{@inheritDoc}
+	 * @throws InvalidBookException */
+	@Override
+	public void modifyBookStatus(String sessionId, String isbn, StatusBook status, boolean value) throws BookNotFoundException, InvalidBookException 
+	{
+		checkSession(sessionId);
+		BookInventory inventory = lookupBookInventory();
+		
+		MutableBook book = inventory.loadBookForEdit(isbn);
+		
+		switch(status)
+		{
+			case STARTED:
+				book.setStarted(value);
+				break;
+			case FINISHED:
+				book.setFinished(value);
+				break;
+			default:
+				break;
+		}
+		
+		inventory.storeBook(book);
+	}
+
 	/**{@inheritDoc}*/
 	@Override
 	public void removeBook(String sessionId, String isbn) throws BookNotFoundException 
@@ -155,7 +180,7 @@ public class BookshelfServiceImpl implements BookshelfService
 		Map<SearchCriteria, String> criteria = new TreeMap<SearchCriteria, String>();
 		criteria.put(SearchCriteria.CATEGORY_LIKE, categoryLike);
 		
-		Set<String> result = inventory.searchBook(criteria);
+		Set<String> result = inventory.searchBooks(criteria);
 
 		return result;
 	}
@@ -170,7 +195,7 @@ public class BookshelfServiceImpl implements BookshelfService
 		Map<SearchCriteria, String> criteria = new TreeMap<SearchCriteria, String>();
 		criteria.put(SearchCriteria.AUTHOR_LIKE, authorLike);
 		
-		Set<String> result = inventory.searchBook(criteria);
+		Set<String> result = inventory.searchBooks(criteria);
 
 		return result;	
 	}
@@ -185,7 +210,7 @@ public class BookshelfServiceImpl implements BookshelfService
 		Map<SearchCriteria, String> criteria = new TreeMap<SearchCriteria, String>();
 		criteria.put(SearchCriteria.TITLE_LIKE, titleLike);
 		
-		Set<String> result = inventory.searchBook(criteria);
+		Set<String> result = inventory.searchBooks(criteria);
 
 		return result;
 	}
@@ -198,10 +223,10 @@ public class BookshelfServiceImpl implements BookshelfService
 		BookInventory inventory = lookupBookInventory();
 		
 		Map<SearchCriteria, String> criteria = new TreeMap<SearchCriteria, String>();
-		criteria.put(SearchCriteria.RATING_GT, Integer.toString(ratingUpper));
-		criteria.put(SearchCriteria.RATING_LT, Integer.toString(ratingLower));
+		criteria.put(SearchCriteria.RATING_GT, Integer.toString(ratingLower));
+		criteria.put(SearchCriteria.RATING_LT, Integer.toString(ratingUpper));
 		
-		Set<String> result = inventory.searchBook(criteria);
+		Set<String> result = inventory.searchBooks(criteria);
 
 		return result;
 	}

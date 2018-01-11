@@ -11,8 +11,12 @@ import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 
 import com.packtpub.felix.bookshelf.inventory.api.Book;
+import com.packtpub.felix.bookshelf.inventory.api.BookAlreadyExistsException;
 import com.packtpub.felix.bookshelf.inventory.api.BookNotFoundException;
+import com.packtpub.felix.bookshelf.inventory.api.InvalidBookException;
+import com.packtpub.felix.bookshelf.inventory.api.MutableBook;
 import com.packtpub.felix.bookshelf.service.api.BookshelfService;
+import com.packtpub.felix.bookshelf.service.api.BookshelfService.StatusBook;
 import com.packtpub.felix.bookshelf.service.api.InvalidCredentialsException;
 
 /**
@@ -23,7 +27,7 @@ public class BookshelfServiceProxy
 {
 	public static final String SCOPE = "book";
 	
-	public static final String[] FUNCTIONS = new String[] {"search"};
+	public static final String[] FUNCTIONS = new String[] {"add", "finished", "get", "remove", "search", "started"};
 	
 	private BundleContext context;
 	
@@ -85,6 +89,82 @@ public class BookshelfServiceProxy
 		return getBooks(sessionId, service, results);
 	}
 			
+	
+	@Descriptor("Add a new Book to bookshelf")
+	public String add(@Descriptor("usename") String username,
+					  @Descriptor("password") String password,
+					  @Descriptor("ISBN") String isbn,
+					  @Descriptor("Title") String title,
+					  @Descriptor("Author") String author,
+					  @Descriptor("Category") String category,
+					  @Descriptor("Rating (0..10)") int rating) throws InvalidCredentialsException, BookAlreadyExistsException, InvalidBookException
+	{	
+		BookshelfService service = lookupService();
+		
+		String sessionId = service.login(username, password.toCharArray());
+
+		service.addBook(sessionId, isbn, title, author, category, rating);
+		
+		return isbn;
+	}
+	
+	@Descriptor("Retrieve the book information from an exact ISBN match")
+	public String get(@Descriptor("username") String username,
+					  @Descriptor("password") String password,
+					  @Descriptor("ISBN") String isbn) throws InvalidCredentialsException, BookNotFoundException
+	{
+		BookshelfService service = lookupService();
+		
+		String sessionId = service.login(username, password.toCharArray());
+		
+		Book book = service.getBook(sessionId, isbn);
+		
+		return ((MutableBook)book).toString();
+	}
+	
+	@Descriptor("Remove a book from the bookshelf based on its ISBN")
+	public String remove(@Descriptor("username") String username,
+						 @Descriptor("password") String password,
+						 @Descriptor("ISBN") String isbn) throws InvalidCredentialsException, BookNotFoundException
+	{
+		BookshelfService service = lookupService();
+		
+		String sessionId = service.login(username, password.toCharArray());
+		
+		service.removeBook(sessionId, isbn);
+		
+		return "Book with ISBN:" + isbn + " removed";
+	}
+
+	@Descriptor("Mark a book as just started, given its ISBN")
+	public String started(@Descriptor("username") String username,
+						  @Descriptor("password") String password,
+						  @Descriptor("ISBN") String isbn,
+						  @Descriptor("Started") boolean value) throws InvalidCredentialsException, BookNotFoundException, InvalidBookException
+	{
+		BookshelfService service = lookupService();
+		
+		String sessionId = service.login(username, password.toCharArray());
+		
+		service.modifyBookStatus(sessionId, isbn, StatusBook.STARTED, value);
+
+		return "Done";
+	}
+
+	@Descriptor("Mark a book as just finished, given its ISBN")
+	public String finished(@Descriptor("username") String username,
+						   @Descriptor("password") String password,
+						   @Descriptor("ISBN") String isbn,
+						   @Descriptor("Finished") boolean value) throws InvalidCredentialsException, BookNotFoundException, InvalidBookException
+	{
+		BookshelfService service = lookupService();
+		
+		String sessionId = service.login(username, password.toCharArray());
+		
+		service.modifyBookStatus(sessionId, isbn, StatusBook.FINISHED, value);
+
+		return "Done";
+	}
 	
 	private Set<Book> getBooks(String sessionId, BookshelfService service, Set<String> results)
 	{

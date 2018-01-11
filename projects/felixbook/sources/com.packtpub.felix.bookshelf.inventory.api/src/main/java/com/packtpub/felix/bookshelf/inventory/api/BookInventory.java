@@ -93,5 +93,5 @@ public interface BookInventory
 	 * @param criteria
 	 * @return It returns the set of ISBNs for the books that match the search criteria.
 	 */
-	Set<String> searchBook(Map<SearchCriteria, String> criteria);
+	Set<String> searchBooks(Map<SearchCriteria, String> criteria);
 }

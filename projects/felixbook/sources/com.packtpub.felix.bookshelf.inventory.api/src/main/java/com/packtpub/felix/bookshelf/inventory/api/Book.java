@@ -40,5 +40,17 @@ public interface Book
 	 * 
 	 * @return Book's rating
 	 */
-	int getRating();	
+	int getRating();
+
+	/**
+	 *
+	 * @return true whether the book has been started
+	 */
+	boolean getStarted();
+
+	/**
+	 *
+	 * @return true whether the book has been finished
+	 */
+	boolean getFinished();
 }

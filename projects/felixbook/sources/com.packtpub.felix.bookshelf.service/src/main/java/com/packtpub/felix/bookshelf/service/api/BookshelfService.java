@@ -16,6 +16,12 @@ import com.packtpub.felix.bookshelf.inventory.api.InvalidBookException;
  */
 public interface BookshelfService extends Authentication 
 {
+	public enum StatusBook
+	{
+		STARTED,
+		FINISHED
+	}
+	
 	/**
 	 * Method used to get set of categories' book stored into the bookshelf
 	 * @param sessionId
@@ -53,6 +59,17 @@ public interface BookshelfService extends Authentication
 	 * @throws InvalidBookException
 	 */
 	void modifyBookRating(String sessionId, String isbn, int rating) throws BookNotFoundException, InvalidBookException;
+	
+	/**
+	 * Method used to modify the Book status attributes of a stored book
+	 * @param sessionId
+	 * @param isbn
+	 * @param status
+	 * @param value
+	 * @throws BookNotFoundException
+	 * @throws InvalidBookException
+	 */
+	void modifyBookStatus(String sessionId, String isbn, StatusBook status, boolean value) throws BookNotFoundException, InvalidBookException;
 	
 	/**
 	 * Method used to remove the Book with specific isbn Id stored in the bookshelf

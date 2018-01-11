@@ -30,4 +30,14 @@ public interface MutableBook extends Book
 	 * @param rating
 	 */
 	void setRating(int rating);
+	
+	/**
+	 * Mark a book as just started
+	 */
+	void setStarted(boolean value);
+	
+	/**
+	 * Mark a book as just finished
+	 */
+	void setFinished(boolean value);
 }

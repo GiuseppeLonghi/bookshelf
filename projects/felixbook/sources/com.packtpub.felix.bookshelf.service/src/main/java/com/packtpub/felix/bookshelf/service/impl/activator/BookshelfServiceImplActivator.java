@@ -30,7 +30,7 @@ public class BookshelfServiceImplActivator implements BundleActivator
 	{
 		this.reg = context.registerService(BookshelfService.class.getName(), new BookshelfServiceImpl(context), null);
 
-		testService(context);
+//		testService(context);
 	}
 
 	/**{@inheritDoc}*/

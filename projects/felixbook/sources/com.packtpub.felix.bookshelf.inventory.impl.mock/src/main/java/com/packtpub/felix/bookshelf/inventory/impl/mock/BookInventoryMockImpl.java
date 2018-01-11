@@ -116,7 +116,7 @@ public class BookInventoryMockImpl implements BookInventory
 	}
 
 	/**{@inheritDoc}*/
-	public Set<String> searchBook(Map<SearchCriteria, String> criteria) 
+	public Set<String> searchBooks(Map<SearchCriteria, String> criteria) 
 	{
 		LinkedList<Book> books = new LinkedList<Book>();
 		books.addAll(this.booksByISBN.values());
