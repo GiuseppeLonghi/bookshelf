@@ -1,0 +1,30 @@
+# deploy Apache Felix iPOJO
+echo Deploying APache Felix iPOJO
+deploy -s "Apache Felix iPOJO"
+
+# update obr repos
+echo Adding releases obr repository. . .
+#repos add file:/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/releases/repository.xml
+repos add file:/local/my_space/OSGi/bookshelf/projects/felixbook/releases/repository.xml
+
+
+# deploy tier 3
+echo Deploying tier 3 \(inventory\) bundles. . .
+bundlelevel -i 2
+frameworklevel 2
+deploy -s "Bookshelf Inventory Impl - Mock"
+
+# deploy tier 2
+echo Deploying tier 2 \(business logic\) bundles. . .
+bundlelevel -i 3
+frameworklevel 3
+deploy -s "Bookshelf Service"
+
+# deploy tier 1
+echo Deploying tier 1 \(presentation\) bundles. . .
+bundlelevel -i 5
+frameworklevel 5
+deploy -s "Bookshelf Service Gogo commands"
+
+# popukate books
+source /local/my_space/OSGi/bookshelf/felix-framework-3.0.1/scripts/populate-books.tsl
