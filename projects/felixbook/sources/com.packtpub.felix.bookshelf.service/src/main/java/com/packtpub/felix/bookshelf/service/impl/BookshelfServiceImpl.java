@@ -37,7 +37,6 @@ public class BookshelfServiceImpl implements BookshelfService
 	}
 	
 	/**{@inheritDoc}*/
-	@Override
 	public String login(String username, char[] password) throws InvalidCredentialsException 
 	{
 		if("admin".equals(username) && Arrays.equals(password, "admin".toCharArray()))
@@ -49,7 +48,6 @@ public class BookshelfServiceImpl implements BookshelfService
 	}
 
 	/**{@inheritDoc}*/
-	@Override
 	public void logout(String sessionId) 
 	{
 		checkSession(sessionId);
@@ -57,7 +55,6 @@ public class BookshelfServiceImpl implements BookshelfService
 	}
 
 	/**{@inheritDoc}*/
-	@Override
 	public boolean sessionIsValid(String sessionId) 
 	{
 		return this.sessionId!=null && this.sessionId.equals(sessionId);
@@ -77,7 +74,6 @@ public class BookshelfServiceImpl implements BookshelfService
 	}
 
 	/**{@inheritDoc}*/
-	@Override
 	public Set<String> getCategories(String sessionId) 
 	{
 		checkSession(sessionId);
@@ -86,7 +82,6 @@ public class BookshelfServiceImpl implements BookshelfService
 	}
 
 	/**{@inheritDoc}*/
-	@Override
 	public void addBook(String sessionId, String isbn, String title, String author, String category, int rating) throws BookAlreadyExistsException, InvalidBookException
 	{
 		checkSession(sessionId);
@@ -103,7 +98,6 @@ public class BookshelfServiceImpl implements BookshelfService
 	}
 
 	/**{@inheritDoc}*/
-	@Override
 	public void modifyBookCategory(String sessionId, String isbn, String category) throws BookNotFoundException, InvalidBookException 
 	{
 		checkSession(sessionId);
@@ -115,7 +109,6 @@ public class BookshelfServiceImpl implements BookshelfService
 	}
 
 	/**{@inheritDoc}*/
-	@Override
 	public void modifyBookRating(String sessionId, String isbn, int rating) throws BookNotFoundException, InvalidBookException 
 	{
 		checkSession(sessionId);
@@ -128,7 +121,6 @@ public class BookshelfServiceImpl implements BookshelfService
 
 	/**{@inheritDoc}
 	 * @throws InvalidBookException */
-	@Override
 	public void modifyBookStatus(String sessionId, String isbn, StatusBook status, boolean value) throws BookNotFoundException, InvalidBookException 
 	{
 		checkSession(sessionId);
@@ -152,7 +144,6 @@ public class BookshelfServiceImpl implements BookshelfService
 	}
 
 	/**{@inheritDoc}*/
-	@Override
 	public void removeBook(String sessionId, String isbn) throws BookNotFoundException 
 	{	
 		checkSession(sessionId);
@@ -162,7 +153,6 @@ public class BookshelfServiceImpl implements BookshelfService
 	}
 
 	/**{@inheritDoc}*/
-	@Override
 	public Book getBook(String sessionId, String isbn) throws BookNotFoundException 
 	{
 		checkSession(sessionId);
@@ -171,7 +161,6 @@ public class BookshelfServiceImpl implements BookshelfService
 	}
 
 	/**{@inheritDoc}*/
-	@Override
 	public Set<String> searchBooksByCategory(String sessionId, String categoryLike) 
 	{
 		checkSession(sessionId);
@@ -186,7 +175,6 @@ public class BookshelfServiceImpl implements BookshelfService
 	}
 
 	/**{@inheritDoc}*/
-	@Override
 	public Set<String> searchBooksByAuthor(String session, String authorLike) 
 	{
 		checkSession(sessionId);
@@ -201,7 +189,6 @@ public class BookshelfServiceImpl implements BookshelfService
 	}
 
 	/**{@inheritDoc}*/
-	@Override
 	public Set<String> searchBooksByTitle(String session, String titleLike) 
 	{
 		checkSession(sessionId);
@@ -216,7 +203,6 @@ public class BookshelfServiceImpl implements BookshelfService
 	}
 
 	/**{@inheritDoc}*/
-	@Override
 	public Set<String> searchBooksByRating(String session, int ratingLower, int ratingUpper) 
 	{
 		checkSession(sessionId);
