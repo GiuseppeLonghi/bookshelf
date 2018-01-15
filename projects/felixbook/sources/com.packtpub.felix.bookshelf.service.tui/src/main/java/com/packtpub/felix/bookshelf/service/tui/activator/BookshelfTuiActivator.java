@@ -6,7 +6,7 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
 
-import com.packtpub.felix.bookshelf.service.tui.BookshelfServiceProxy;
+import com.packtpub.felix.bookshelf.service.tui.BookshelfServiceProxyImpl;
 
 public class BookshelfTuiActivator implements BundleActivator 
 {
@@ -15,10 +15,10 @@ public class BookshelfTuiActivator implements BundleActivator
 	public void start(BundleContext context) throws Exception 
 	{
 		Hashtable<String, Object> props = new Hashtable<String, Object>();
-		props.put("osgi.command.scope", BookshelfServiceProxy.SCOPE);
-		props.put("osgi.command.function", BookshelfServiceProxy.FUNCTIONS);
+		props.put("osgi.command.scope", BookshelfServiceProxyImpl.SCOPE);
+		props.put("osgi.command.function", BookshelfServiceProxyImpl.FUNCTIONS);
 		
-		this.reg = context.registerService(BookshelfServiceProxy.class.getName(), new BookshelfServiceProxy(context), props);
+		this.reg = context.registerService(BookshelfServiceProxyImpl.class.getName(), new BookshelfServiceProxyImpl(context), props);
 	}
 
 	public void stop(BundleContext context) throws Exception 

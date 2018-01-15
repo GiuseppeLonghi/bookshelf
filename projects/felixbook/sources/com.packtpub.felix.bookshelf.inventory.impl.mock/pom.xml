@@ -30,7 +30,7 @@
 						<Export-Package>com.packtpub.felix.bookshelf.inventory.impl.mock</Export-Package>
 					</instructions>
 					<remoteOBR>repo-rel</remoteOBR>
-					<prefixUrl>file:/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/releases</prefixUrl>
+					<prefixUrl>file:/local/my_space/OSGi/bookshelf/projects/felixbook/releases</prefixUrl>
 				</configuration>
 			</plugin>
 
@@ -65,7 +65,7 @@
 		<!-- releases repo -->
 		<repository>
 			<id>repo-rel</id>
-			<url>file:/local/my_space/OSGi/eclipse-jee-helios/workspace/bookshelf/projects/felixbook/releases</url>
+			<url>file:/local/my_space/OSGi/bookshelf/projects/felixbook/releases</url>
 		</repository>
 	</distributionManagement>
 

@@ -1,6 +1,7 @@
 # deploy Apache Felix iPOJO
 echo Deploying APache Felix iPOJO
-deploy -s "Apache Felix iPOJO"
+#deploy -s "Apache Felix iPOJO" # this command downloads the current last version 1.8.0. In example book it is used version 1.6.0
+deploy -s "Apache Felix iPOJO"@1.6.0
 
 # update obr repos
 echo Adding releases obr repository. . .

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipojo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="org.apache.felix.ipojo http://felix.apache.org/ipojo/schemas/CURRENT/core.xsd org.apache.felix.ipojo.handlers.jmx http://felix.apache.org/ipojo/schemas/CURRENT/jmx.xsd"
+	xmlns="org.apache.felix.ipojo" xmlns:jmx="org.apache.felix.ipojo.handlers.jmx">
+
+	<!-- Declaring the COMPONENT -->
+	<component classname="com.packtpub.felix.bookshelf.service.impl.BookshelfServiceImpl" name="BookshelfServiceImpl">
+		<!-- This tag to specify that this component provides a service which will be published against the BookshelfService interface -->
+		<provides />
+		
+		<!-- we ask iPOJO to inject the inventory field we have declared -->
+		<requires field="inventory" />
+	</component>
+
+	<!-- Declare the instance -->
+	<instance component="BookshelfServiceImpl" name="bookshelf.service.impl" />
+</ipojo>

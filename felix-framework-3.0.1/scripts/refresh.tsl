@@ -1,0 +1,5 @@
+# Refresh repository
+echo Refreshing repos. . .
+repos refresh file:/local/my_space/OSGi/bookshelf/projects/felixbook/releases/repository.xml
+
+echo refresh Done. Do not forget to execute update + id_bundle to update the installation
