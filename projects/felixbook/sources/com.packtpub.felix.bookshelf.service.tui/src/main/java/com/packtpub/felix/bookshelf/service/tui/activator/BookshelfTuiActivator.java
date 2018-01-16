@@ -14,6 +14,8 @@ public class BookshelfTuiActivator implements BundleActivator
 	
 	public void start(BundleContext context) throws Exception 
 	{
+		System.out.println("\nStarting Bookshelf TUI Impl");
+
 		Hashtable<String, Object> props = new Hashtable<String, Object>();
 		props.put("osgi.command.scope", BookshelfServiceProxyImpl.SCOPE);
 		props.put("osgi.command.function", BookshelfServiceProxyImpl.FUNCTIONS);

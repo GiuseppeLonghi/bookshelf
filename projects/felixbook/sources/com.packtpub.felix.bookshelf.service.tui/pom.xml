@@ -24,7 +24,7 @@
 					<instructions>
 						<Bundle-Category>sample</Bundle-Category>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-<!-- 						<Bundle-Activator>com.packtpub.felix.bookshelf.service.tui.activator.BookshelfTuiActivator</Bundle-Activator>
+ 						<!-- <Bundle-Activator>com.packtpub.felix.bookshelf.service.tui.activator.BookshelfTuiActivator</Bundle-Activator>
 						<Private-Package>com.packtpub.felix.bookshelf.service.tui.activator</Private-Package> -->
 						<Export-Package>com.packtpub.felix.bookshelf.service.tui</Export-Package>
 					</instructions>

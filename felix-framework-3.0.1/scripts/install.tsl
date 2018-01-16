@@ -1,7 +1,11 @@
 # deploy Apache Felix iPOJO
-echo Deploying APache Felix iPOJO
+echo Deploying Apache Felix iPOJO
 #deploy -s "Apache Felix iPOJO" # this command downloads the current last version 1.8.0. In example book it is used version 1.6.0
 deploy -s "Apache Felix iPOJO"@1.6.0
+
+# deploy Apache Felix iPOJO Gogo Command
+echo Deploying Apache Felix iPOJO Gogo Command
+deploy -s "Apache Felix iPOJO Gogo Command"
 
 # update obr repos
 echo Adding releases obr repository. . .
@@ -26,6 +30,8 @@ echo Deploying tier 1 \(presentation\) bundles. . .
 bundlelevel -i 5
 frameworklevel 5
 deploy -s "Bookshelf Service Gogo commands"
+
+
 
 # popukate books
 source /local/my_space/OSGi/bookshelf/felix-framework-3.0.1/scripts/populate-books.tsl
